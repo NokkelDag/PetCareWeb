@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,15 +22,31 @@
     /* =========================
        RESET & BASE
     ========================= */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Manrope', sans-serif;
       background: var(--background);
       color: #222;
     }
-    h1 { font-size: 48px; }
-    h2 { font-size: 32px; margin-bottom: 20px; }
-    p { color: var(--accent); line-height: 1.6; }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--accent);
+      line-height: 1.6;
+    }
 
     /* =========================
        HEADER
@@ -43,17 +60,31 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
-    .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; }
-    .logo img { width: 32px; border-radius: 50%; }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .logo img {
+      width: 32px;
+      border-radius: 50%;
+    }
+
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: #222;
       font-weight: 500;
     }
-    nav a:hover { color: var(--primary); }
+
+    nav a:hover {
+      color: var(--primary);
+    }
 
     .btn {
       background: var(--primary);
@@ -65,7 +96,8 @@
 
     /* BOTÓN HAMBURGUESA */
     .menu-toggle {
-      display: none; /* oculto en escritorio */
+      display: none;
+      /* oculto en escritorio */
       background: var(--primary);
       color: white;
       border: none;
@@ -84,9 +116,22 @@
     /* =========================
        SECCIONES GENERALES
     ========================= */
-    section { padding: 80px 40px; margin: auto; }
-    .flex { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-    .flex img { max-width: 450px; border-radius: 20px; }
+    section {
+      padding: 40px 5%;
+      margin: auto;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .flex img {
+      max-width: 450px;
+      border-radius: 20px;
+    }
 
     /* =========================
        HERO
@@ -98,12 +143,14 @@
       background-position: center;
       position: relative;
     }
+
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.35);
+      background: rgba(0, 0, 0, 0.35);
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
@@ -115,7 +162,11 @@
       color: white;
       text-align: center;
     }
-    .hero h1 { font-size: 60px; }
+
+    .hero h1 {
+      font-size: 60px;
+    }
+
     .hero p {
       font-size: 20px;
       max-width: 500px;
@@ -125,26 +176,26 @@
     /* =========================
        SECCIÓN QUÈ ÉS / ABOUT
     ========================= */
-    .about {
-      height: 100vh;
-    }
     .about-image {
       position: relative;
       max-width: 900px;
       margin: auto;
     }
+
     .about-image img {
       width: 100%;
       border-radius: 20px;
       display: block;
     }
+
     .about-image::before {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: 20px;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
     }
+
     .overlay-text {
       position: absolute;
       bottom: 40px;
@@ -153,21 +204,29 @@
       max-width: 400px;
       z-index: 2;
     }
-    .subtitle { font-size: 18px; margin-bottom: 10px; opacity: 0.9; color: var(--background); }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      color: var(--background);
+    }
 
     .about-text {
       opacity: 0.9;
       color: var(--background);
     }
+
     /* =========================
        CARDS / APP
     ========================= */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin-top: 40px;
     }
+
     .card {
       height: 260px;
       border-radius: 20px;
@@ -178,20 +237,29 @@
       display: flex;
       align-items: flex-end;
     }
+
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.4);
     }
+
     .card-content {
       position: relative;
       color: white;
       padding: 20px;
       z-index: 2;
     }
-    .card-content h3 { margin-bottom: 6px; }
-    .card-content p { color: rgba(255,255,255,0.9); font-size: 14px; }
+
+    .card-content h3 {
+      margin-bottom: 6px;
+    }
+
+    .card-content p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+    }
 
     /* =========================
        DIA A DIA / METRICS
@@ -203,13 +271,19 @@
       gap: 60px;
       flex-wrap: wrap;
     }
-    .day-text { flex: 1; max-width: 500px; }
+
+    .day-text {
+      flex: 1;
+      max-width: 500px;
+    }
+
     .metrics {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
+
     .metric {
       background: white;
       padding: 20px;
@@ -220,7 +294,10 @@
     /* =========================
        DESCÀRREGA / DOWNLOAD
     ========================= */
-    .download-section { padding: 100px 40px; }
+    .download-section {
+      padding: 100px 40px;
+    }
+
     .download-content {
       display: flex;
       align-items: center;
@@ -228,17 +305,20 @@
       gap: 60px;
       flex-wrap: wrap;
     }
+
     .mockup-video {
       max-height: 80vh;
       width: auto;
       max-width: 100%;
       border-radius: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
+
     .download-text {
       max-width: 400px;
       text-align: left;
     }
+
     .store-buttons {
       display: flex;
       gap: 20px;
@@ -248,7 +328,13 @@
     /* =========================
        FAQ
     ========================= */
-    .faq-item { margin-bottom: 16px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); }
+    .faq-item {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
     .faq-question {
       width: 100%;
       text-align: left;
@@ -262,7 +348,11 @@
       outline: none;
       transition: background 0.3s;
     }
-    .faq-question:hover { background: var(--active); }
+
+    .faq-question:hover {
+      background: var(--active);
+    }
+
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -273,35 +363,49 @@
       font-size: 15px;
       line-height: 1.5;
     }
-    .faq-answer.open { padding: 16px; max-height: 300px; }
+
+    .faq-answer.open {
+      padding: 16px;
+      max-height: 300px;
+    }
 
     /* =========================
        FOOTER
     ========================= */
     footer {
       background: white;
-      padding: 60px 40px;
+      padding: 40px 10%;
       display: flex;
-      justify-content: center;
-      gap: 60px;
+      justify-content: space-between;
+      /* gap: 20%; */
       flex-wrap: wrap;
-      text-align: left;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
+
     .footer-column {
       display: flex;
       flex-direction: column;
-      gap: 10px;
     }
-    .footer-column strong { margin-bottom: 10px; font-size: 18px; }
+
+    .footer-column strong {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
     .footer-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #222;
-      font-size: 15px;
+        display: flex;
+        align-items: center;
+        color: #222;
+        font-size: 15px;
+        justify-content: flex-start;
     }
-    .footer-item .icon { color: var(--primary); font-size: 18px; }
+
+    .footer-item .icon {
+      color: var(--primary);
+      font-size: 18px;
+    }
+
     .copyright {
       text-align: center;
       padding: 20px;
@@ -314,12 +418,34 @@
        RESPONSIVE / ADAPTACIONES MÓVIL
     ========================= */
     @media (max-width: 1024px) {
-      .day { flex-direction: column; gap: 40px; }
-      .download-content { flex-direction: column; text-align: center; }
-      .download-text { text-align: center; }
-      .store-buttons { justify-content: center; flex-wrap: wrap; }
-      .overlay-text { left: 20px; right: 20px; bottom: 20px; max-width: unset; text-align: center; }
+      .day {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .download-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .download-text {
+        text-align: center;
+      }
+
+      .store-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .overlay-text {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: unset;
+        text-align: center;
+      }
     }
+
     @media (max-width: 768px) {
       header {
         flex-direction: row;
@@ -336,21 +462,23 @@
       /* ocultamos links por defecto */
       .nav-links {
         position: absolute;
-        top: 60px; /* debajo del header */
+        top: 60px;
+        /* debajo del header */
         right: 20px;
         background: white;
         flex-direction: column;
         gap: 0;
         border-radius: 12px;
         overflow: hidden;
-        display: none; /* oculto inicialmente */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        display: none;
+        /* oculto inicialmente */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         width: 200px;
       }
 
       .nav-links a {
         padding: 12px 20px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       .nav-links a:last-child {
@@ -362,14 +490,43 @@
         display: flex;
       }
 
-      nav a { margin-left: 12px; margin-right: 12px; }
-      footer { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
-      .footer-column { align-items: center; }
-      .hero h1 { font-size: 42px; }
-      .hero p { font-size: 18px; max-width: 90%; }
-      .grid { grid-template-columns: 1fr; }
-      .day-text, .metrics { max-width: 100%; }
-      .mockup-video { max-height: 60vh; }
+      nav a {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .footer-column {
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 90%;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-text,
+      .metrics {
+        max-width: 100%;
+      }
+
+      .mockup-video {
+        max-height: 60vh;
+      }
     }
   </style>
 </head>
@@ -393,7 +550,7 @@
       <a href="#inici">Inici</a>
       <a href="#quisom">Qui som?</a>
       <a href="#descarrega">Descarrega l'app</a>
-      <a href="#packs">Packs</a>
+      <a href="packs.html">Packs</a>
       <a href="#faq">Preguntes freqüents</a>
     </nav>
   </header>
@@ -417,7 +574,9 @@
       <div class="overlay-text">
         <h2>Descobreix què és PetCare</h2>
         <p class="subtitle">El benestar de la teva mascota és la nostra prioritat.</p>
-        <p class="about-text">PetCare és una aplicació pensada per simplificar el dia a dia dels propietaris de mascotes. Gestiona la seva salut, descobreix espais pet-friendly i connecta amb professionals, tot en un sol lloc.</p>
+        <p class="about-text">PetCare és una aplicació pensada per simplificar el dia a dia dels propietaris de
+          mascotes. Gestiona la seva salut, descobreix espais pet-friendly i connecta amb professionals, tot en un sol
+          lloc.</p>
       </div>
     </div>
   </section>
@@ -427,7 +586,8 @@
   ========================= -->
   <section>
     <h2 style="text-align:center;">La nostra aplicació</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">PetCare està dissenyada per oferir una experiència completa tant per a propietaris com per a professionals i negocis del sector.</p>
+    <p style="text-align:center; max-width:600px; margin:auto;">PetCare està dissenyada per oferir una experiència
+      completa tant per a propietaris com per a professionals i negocis del sector.</p>
     <div class="grid">
       <div class="card" style="background-image:url('assets/perfil.webp')">
         <div class="card-content">
@@ -462,7 +622,8 @@
   <section class="day">
     <div class="day-text">
       <h2>Cura del teu millor amic</h2>
-      <p>Actualment molts de nosaltres utilitzem aplicacions amb serveis centralitzats que ens ajuden en el dia a dia. Per què no tenir-ne una per al teu millor amic?</p>
+      <p>Actualment molts de nosaltres utilitzem aplicacions amb serveis centralitzats que ens ajuden en el dia a dia.
+        Per què no tenir-ne una per al teu millor amic?</p>
     </div>
     <div class="metrics">
       <div class="metric"><strong>10k+</strong><br>Descàrregues</div>
@@ -515,7 +676,10 @@
   ========================= -->
   <footer>
     <div class="footer-column">
-      <strong>PetCare</strong><br>
+      <div class="logo">
+        <img src="assets/logo.png" alt="logo">
+        PetCare
+      </div><br>
       <span class="footer-item"><span class="icon">📧</span> contacte@petcare.cat</span><br>
       <span class="footer-item"><span class="icon">📍</span> Carrer Roc Boronat</span><br>
       <span class="footer-item"><span class="icon">📸</span> @petcareapp</span>
@@ -533,6 +697,7 @@
   </footer>
   <div class="copyright">© 2026 PetCare</div>
 
+
   <!-- =========================
        SCRIPT FAQ
   ========================= -->
@@ -546,20 +711,21 @@
       });
     });
 
-  // HAMBURGUESA HEADER
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+    // HAMBURGUESA HEADER
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // cerrar menú al hacer clic en link (opcional)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
-  });
-</script>
+
+    // cerrar menú al hacer clic en link (opcional)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
+
 </html>

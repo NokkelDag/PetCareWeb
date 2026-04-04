@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare Packs</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #45d3c5;
+      --background: #fbf7f0;
+      --accent: #79808a;
+      --active: #2f9c97;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--background);
+      color: #222;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--accent);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .logo img {
+      width: 32px;
+      border-radius: 50%;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* =========================
+       PACKS / SECCIONS
+    ========================= */
+    .packs-header {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+    }
+
+    .packs-header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .packs-header p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 5%;
+      margin: auto;
+    }
+
+    .pack-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pack-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .pack-card h3 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .pack-card .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .pack-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: var(--accent);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      background: white;
+      padding: 40px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-column strong {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+      color: #222;
+      font-size: 15px;
+      justify-content: flex-start;
+    }
+
+    .footer-item .icon {
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 20px;
+      color: var(--accent);
+      background: #f9f9f9;
+      font-size: 14px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        display: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        width: 200px;
+      }
+
+      .nav-links a {
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .packs-header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================
+       HEADER
+  ========================= -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="logo">
+      PetCare
+    </div>
+
+    <button class="menu-toggle" aria-label="Menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="index.html#inici">Inici</a>
+      <a href="index.html#quisom">Qui som?</a>
+      <a href="index.html#descarrega">Descarrega l'app</a>
+      <a href="packs.html">Packs</a>
+      <a href="index.html#faq">Preguntes freqüents</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       PACKS HEADER
+  ========================= -->
+  <section class="packs-header">
+    <h1>Packs de PetCare</h1>
+    <p>Descobreix els plans i subscripcions adaptats a cada perfil d'usuari dins de l'aplicació.</p>
+  </section>
+
+  <!-- =========================
+       PACKS GRID
+  ========================= -->
+  <section class="packs-grid">
+
+    <!-- Propietaris de mascotes -->
+    <div class="pack-card">
+      <h3>Propietaris de mascotes – Freemium</h3>
+      <div class="price">Gratuït</div>
+      <ul>
+        <li>Funcionalitats bàsiques</li>
+        <li>Anuncis moderats</li>
+      </ul>
+    </div>
+
+    <div class="pack-card">
+      <h3>Propietaris de mascotes – Premium</h3>
+      <div class="price">5,99 € / any</div>
+      <ul>
+        <li>Eliminació d’anuncis</li>
+        <li>Accés prioritari a professionals verificats</li>
+        <li>Funcionalitats avançades</li>
+        <li>Continguts exclusius</li>
+      </ul>
+    </div>
+
+    <!-- Passejadors i cuidadors -->
+    <div class="pack-card">
+      <h3>Passejadors i cuidadors – Freemium</h3>
+      <div class="price">Gratuït</div>
+      <ul>
+        <li>Funcionalitats bàsiques</li>
+        <li>Anuncis limitats</li>
+      </ul>
+    </div>
+
+    <div class="pack-card">
+      <h3>Passejadors i cuidadors – Professional</h3>
+      <div class="price">7,99 € / any</div>
+      <ul>
+        <li>Verificació del perfil</li>
+        <li>Distintiu visible</li>
+        <li>Major visibilitat en cerques</li>
+        <li>Estadístiques bàsiques</li>
+        <li>Eliminació d’anuncis</li>
+      </ul>
+    </div>
+
+    <!-- Negocis i professionals -->
+    <div class="pack-card">
+      <h3>Negocis – Bàsic gratuït</h3>
+      <div class="price">Gratuït</div>
+      <ul>
+        <li>Presència dins l'aplicació</li>
+      </ul>
+    </div>
+
+    <div class="pack-card">
+      <h3>Negocis – Pack Bàsic</h3>
+      <div class="price">19,99 € / any</div>
+      <ul>
+        <li>Perfil destacat dins del directori</li>
+        <li>Publicacions promocionals limitades</li>
+      </ul>
+    </div>
+
+    <div class="pack-card">
+      <h3>Negocis – Pack Avançat</h3>
+      <div class="price">49,99 € / any</div>
+      <ul>
+        <li>Perfil destacat</li>
+        <li>Publicacions il·limitades</li>
+        <li>Mètriques d’ús i interacció</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+  <footer>
+    <div class="footer-column">
+      <div class="logo">
+        <img src="assets/logo.png" alt="logo">
+        PetCare
+      </div><br>
+      <span class="footer-item"><span class="icon">📧</span> contacte@petcare.cat</span><br>
+      <span class="footer-item"><span class="icon">📍</span> Carrer Roc Boronat</span><br>
+      <span class="footer-item"><span class="icon">📸</span> @petcareapp</span>
+    </div>
+    <div class="footer-column">
+      <strong>Legal</strong><br>
+      <span class="footer-item">Privacitat</span><br>
+      <span class="footer-item">Cookies</span>
+    </div>
+    <div class="footer-column">
+      <strong>Sobre l'app</strong><br>
+      <span class="footer-item">Descarrega</span><br>
+      <span class="footer-item">Què és PetCare</span>
+    </div>
+  </footer>
+  <div class="copyright">© 2026 PetCare</div>
+
+  <script>
+    // HAMBURGUESA HEADER
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
