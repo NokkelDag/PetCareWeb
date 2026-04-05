@@ -180,12 +180,11 @@
       position: relative;
       max-width: 900px;
       margin: auto;
-    }
-
-    .about-image img {
-      width: 100%;
+      aspect-ratio: 16/9;
+      background-image: url("assets/pets2.jpg");
+      background-size: cover;
+      background-position: center;
       border-radius: 20px;
-      display: block;
     }
 
     .about-image::before {
@@ -215,6 +214,10 @@
     .about-text {
       opacity: 0.9;
       color: var(--background);
+    }
+
+    .about-image-mobile {
+      display: none;
     }
 
     /* =========================
@@ -438,9 +441,6 @@
       }
 
       .overlay-text {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
         max-width: unset;
         text-align: center;
       }
@@ -493,6 +493,67 @@
       nav a {
         margin-left: 12px;
         margin-right: 12px;
+      }
+
+      .about-image {
+        display: none;
+      }
+
+      .about-image-mobile {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        max-width: 95%;
+        margin: auto;
+        text-align: center;
+      }
+
+      .about-image-mobile-image {
+        position: relative;
+        margin: auto;
+        aspect-ratio: 16/9;
+        background-image: url("assets/pets2.jpg");
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        min-width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .about-image-mobile-image::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .overlay-text {
+        position: absolute;
+        color: white;
+        max-width: 80%;
+        z-index: 2;
+        margin: auto;
+        font-size: 11pt;
+        bottom: auto;
+        left: auto;
+        margin: auto;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        color: var(--accent);
+      }
+
+      .about-text {
+        opacity: 0.9;
+        color: var(--background);
       }
 
       footer {
@@ -570,13 +631,23 @@
   ========================= -->
   <section id="quisom" class="about">
     <div class="about-image">
-      <img src="assets/pets2.jpg" alt="Mascotes">
       <div class="overlay-text">
         <h2>Descobreix què és PetCare</h2>
         <p class="subtitle">El benestar de la teva mascota és la nostra prioritat.</p>
         <p class="about-text">PetCare és una aplicació pensada per simplificar el dia a dia dels propietaris de
           mascotes. Gestiona la seva salut, descobreix espais pet-friendly i connecta amb professionals, tot en un sol
           lloc.</p>
+      </div>
+    </div>
+    <div class="about-image-mobile">
+      <h2>Descobreix què és PetCare</h2>
+      <p class="subtitle">El benestar de la teva mascota és la nostra prioritat.</p>
+      <div class="about-image-mobile-image">
+        <div class="overlay-text">
+          <p class="about-text">PetCare és una aplicació pensada per simplificar el dia a dia dels propietaris de
+            mascotes. Gestiona la seva salut, descobreix espais pet-friendly i connecta amb professionals, tot en un sol
+            lloc.</p>
+        </div>
       </div>
     </div>
   </section>
